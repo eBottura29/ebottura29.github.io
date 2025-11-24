@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin — Slave's Demonlist</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="initAdmin();">
+
+<header>
+    <div class="nav">
+        <div class="brand">Slave's Demonlist — Admin</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a id="nav-player-link" href="#">Players</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+</header>
+
+<main id="content" class="admin-container">
+    <h1>Admin Panel (localStorage)</h1>
+
+    <p>Edits here are stored in <code>localStorage</code> on your browser only. The site will use these edits automatically. Use the Export button to download JSON if you want to replace server files manually.</p>
+
+    <section class="card">
+        <h3>Demons (JSON)</h3>
+        <textarea id="demonsEditor" class="json-editor"></textarea>
+        <div class="admin-actions">
+            <button onclick="saveAdminData('demons')">Save demons → localStorage</button>
+            <button onclick="exportAdminData('demons')">Export demons.json</button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h3>Players (JSON)</h3>
+        <textarea id="playersEditor" class="json-editor"></textarea>
+        <div class="admin-actions">
+            <button onclick="saveAdminData('players')">Save players → localStorage</button>
+            <button onclick="exportAdminData('players')">Export players.json</button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h3>Records (JSON)</h3>
+        <textarea id="recordsEditor" class="json-editor"></textarea>
+        <div class="admin-actions">
+            <button onclick="saveAdminData('records')">Save records → localStorage</button>
+            <button onclick="exportAdminData('records')">Export records.json</button>
+        </div>
+    </section>
+
+    <div style="margin-top:16px;">
+        <button onclick="loadAdminFromFiles()">Load current site JSON files into editors</button>
+        <button onclick="loadAdminFromLocalStorage()">Load saved edits from localStorage</button>
+        <button onclick="clearAdminLocalStorage()">Clear localStorage edits</button>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

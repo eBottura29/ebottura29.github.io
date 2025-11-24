@@ -1,0 +1,17 @@
+[
+  {
+    "demonID": "slaughterhouse",
+    "playerID": "player1",
+    "youtube": "https://youtu.be/example"
+  },
+  {
+    "demonID": "slaughterhouse",
+    "playerID": "friend1",
+    "youtube": null
+  },
+  {
+    "demonID": "tartarus",
+    "playerID": "friend1",
+    "youtube": "https://youtu.be/example2"
+  }
+]

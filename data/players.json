@@ -1,0 +1,29 @@
+[
+  {
+    "id": "player1",
+    "name": "YourName",
+    "country": "US",
+    "gdUsername": "YourGDUser",
+    "clan": "XYZ",
+    "rank": 1,
+    "listPoints": 420,
+    "hardest": "slaughterhouse",
+    "beatenDemons": [
+      "slaughterhouse",
+      "tartarus"
+    ]
+  },
+  {
+    "id": "friend1",
+    "name": "FriendGuy",
+    "country": "GB",
+    "gdUsername": "FriendGD",
+    "clan": "ABC",
+    "rank": 2,
+    "listPoints": 350,
+    "hardest": "tartarus",
+    "beatenDemons": [
+      "tartarus"
+    ]
+  }
+]

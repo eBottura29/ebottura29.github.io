@@ -1,0 +1,38 @@
+[
+  {
+    "id": "slaughterhouse",
+    "name": "Slaughterhouse",
+    "creator": "IcEDCave",
+    "placement": 1,
+    "points": 150,
+    "difficulty": "extreme",
+    "publisher": "IcEDCave",
+    "levelID": 79277270,
+    "lengthSeconds": 89,
+    "objects": 112000,
+    "aredlRank": 2,
+    "song": {
+      "name": "Crystalized",
+      "ngID": 12345,
+      "nongLink": null
+    }
+  },
+  {
+    "id": "tartarus",
+    "name": "Tartarus",
+    "creator": "Riot",
+    "placement": 2,
+    "points": 140,
+    "difficulty": "extreme",
+    "publisher": "Riot",
+    "levelID": 65353041,
+    "lengthSeconds": 95,
+    "objects": 72000,
+    "aredlRank": 3,
+    "song": {
+      "name": "Black Blizzard",
+      "ngID": 98765,
+      "nongLink": null
+    }
+  }
+]
