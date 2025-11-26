@@ -121,7 +121,7 @@ async function loadDemonPage() {
             <img src="assets/faces/${demon.difficultyIcon}" style="height:72px" alt="diff">
             <div>
                 <div style="font-size:18px;font-weight:700">${escapeHtml(demon.name)} ${demon.aredlRank !== undefined ? `<span class="areadl-badge">AREDL #${demon.aredlRank}</span>` : ""}</div>
-                <div style="color:var(--muted);margin-top:6px">Rank #${demon.rank ?? "?"} • ${demon.creator ?? ""}</div>
+                <div style="color:var(--muted);margin-top:6px">Rank #${demon.placement ?? "?"} • ${demon.creator ?? ""}</div>
             </div>
         </div>
 
