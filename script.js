@@ -114,6 +114,7 @@ async function loadDemonPage() {
     if (!demon) { document.getElementById("title").innerText = "Demon not found"; return; }
 
     document.getElementById("title").innerText = demon.name;
+    console.log(demon);
 
     const dataDiv = document.getElementById("data");
     dataDiv.innerHTML = `
@@ -130,7 +131,7 @@ async function loadDemonPage() {
             <p>Level ID: ${escapeHtml(String(demon.levelID ?? ""))}</p>
             <p>Length: ${formatLength(demon.lengthSeconds ?? 0)}</p>
             <p>Objects: ${escapeHtml(String(demon.objects ?? ""))}</p>
-            <p>List Points: ${demon.listPoints ?? 0}</p>
+            <p>List Points: ${demon.points ?? 0}</p>
             <p>Song: ${demon.song && demon.song.nongLink ? `<a href="${escapeAttr(demon.song.nongLink)}" target="_blank">NONG</a>` :
              demon.song && demon.song.ngID ? `<a href="https://www.newgrounds.com/audio/listen/${escapeAttr(demon.song.ngID)}" target="_blank">Newgrounds</a>` : "—"}</p>
         </div>
