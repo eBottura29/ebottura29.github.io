@@ -118,7 +118,7 @@ async function loadDemonPage() {
     const dataDiv = document.getElementById("data");
     dataDiv.innerHTML = `
         <div style="display:flex;gap:16px;align-items:center;">
-            <img src="assets/faces/${demon.difficultyIcon}" style="height:72px" alt="diff">
+            <img src="assets/faces/${demon.difficulty}.png" style="height:72px" alt="diff">
             <div>
                 <div style="font-size:18px;font-weight:700">${escapeHtml(demon.name)} ${demon.aredlRank !== undefined ? `<span class="areadl-badge">AREDL #${demon.aredlRank}</span>` : ""}</div>
                 <div style="color:var(--muted);margin-top:6px">Rank #${demon.placement ?? "?"} • ${demon.creator ?? ""}</div>
