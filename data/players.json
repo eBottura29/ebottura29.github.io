@@ -1,29 +1,16 @@
 [
   {
-    "id": "player1",
-    "name": "YourName",
-    "country": "US",
-    "gdUsername": "YourGDUser",
-    "clan": "XYZ",
+    "id": "ebottura",
+    "name": "eBottura",
+    "country": "BR",
+    "gdUsername": "eBottura",
+    "clan": "GDBR",
     "rank": 1,
-    "listPoints": 420,
-    "hardest": "slaughterhouse",
+    "hardest": "bloodbath",
     "beatenDemons": [
-      "slaughterhouse",
-      "tartarus"
-    ]
-  },
-  {
-    "id": "friend1",
-    "name": "FriendGuy",
-    "country": "GB",
-    "gdUsername": "FriendGD",
-    "clan": "ABC",
-    "rank": 2,
-    "listPoints": 350,
-    "hardest": "tartarus",
-    "beatenDemons": [
-      "tartarus"
+      "bloodbath",
+      "cataclysm",
+      "niwa"
     ]
   }
 ]

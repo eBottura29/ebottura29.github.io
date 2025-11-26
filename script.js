@@ -183,12 +183,20 @@ async function loadPlayerPage() {
     const flagSrc = p.country ? `assets/flags/${String(p.country).toLowerCase()}.png` : null;
     const hardest = demons.find(d => d.id === p.hardest);
 
+    let listPoints = 0;
+
+    for (let i = 0; i < (p.beatenDemons || []).length; i++) {
+        const did = p.beatenDemons[i];
+        const d = demons.find(x => x.id === did);
+        if (d && d.points) listPoints += d.points;
+    }
+
     info.innerHTML = `
         ${flagSrc ? `<img src="${flagSrc}" class="flag-big" alt="">` : ""}
         <p>GD Username: ${escapeHtml(p.gdUsername ?? "")}</p>
         <p>Clan: ${escapeHtml(p.clan ?? "")}</p>
         <p>Rank: #${p.rank ?? "?"}</p>
-        <p>List Points: ${p.listPoints ?? 0}</p>
+        <p>List Points: ${listPoints}</p>
         <p>Hardest: ${hardest ? `<a href="demon.html?id=${encodeURIComponent(hardest.id)}">${escapeHtml(hardest.name)}</a>` : "—"}</p>
     `;
 
@@ -207,6 +215,7 @@ async function loadPlayerPage() {
 
 async function loadPlayerFromParam() {
     const players = await fetch("data/players.json").then(r => r.json());
+    const demons = await fetch("data/demons.json").then(r => r.json());
     if (!players || players.length === 0) return;
 
     let playerId = getParam("id");
@@ -221,6 +230,14 @@ async function loadPlayerFromParam() {
     const player = players.find(p => p.id === playerId);
     if (!player) return;
 
+    let listPoints = 0;
+
+    for (let i = 0; i < (player.beatenDemons || []).length; i++) {
+        const did = player.beatenDemons[i];
+        const d = demons.find(x => x.id === did);
+        if (d && d.points) listPoints += d.points;
+    }
+
     // populate player info
     document.getElementById("playerName").textContent = player.name;
     const infoDiv = document.getElementById("info");
@@ -229,14 +246,13 @@ async function loadPlayerFromParam() {
         <p>GD Username: ${player.gdUsername ?? ""}</p>
         <p>Clan: ${player.clan ?? ""}</p>
         <p>Rank: #${player.rank ?? "?"}</p>
-        <p>List Points: ${player.listPoints ?? 0}</p>
+        <p>List Points: ${listPoints}</p>
         <p>Hardest Demon: ${player.hardest ? `<a href="demon.html?id=${encodeURIComponent(player.hardest)}">${player.hardest}</a>` : "—"}</p>
     `;
 
     // populate completed demons
     const completionsDiv = document.getElementById("completions");
     completionsDiv.innerHTML = "";
-    const demons = await fetch("data/demons.json").then(r => r.json());
     (player.beatenDemons || []).forEach(did => {
         const demon = demons.find(d => d.id === did);
         if (!demon) return;
